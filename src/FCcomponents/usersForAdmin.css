@@ -1,0 +1,38 @@
+.user-item {
+  list-style-type: none;
+  background-color: gray;
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-item h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.user-item img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-item p {
+  margin-bottom: 5px;
+}
+
+.user-item button {
+  padding: 5px 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.user-item button:hover {
+  background-color: #ff6347;
+  color: #fff;
+}
