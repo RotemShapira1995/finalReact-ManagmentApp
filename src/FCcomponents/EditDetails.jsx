@@ -47,9 +47,10 @@ function EditDetails({ currentUser, onSave, setShowEditDetails }) {
     const updatedUser = { ...currentUser, ...formJson, imageSrc };
 
     // Save the updated user to local storage
-    const userLoggedIn = JSON.parse(localStorage.getItem("user")) || null;
+    const userLoggedIn = JSON.parse(sessionStorage.getItem("userData")) || null;
+    console.log(userLoggedIn);
     if (userLoggedIn.username !== "admin") {
-      localStorage.setItem("user", JSON.stringify(updatedUser));
+      sessionStorage.setItem("userData", JSON.stringify(updatedUser));
     }
     onSave(updatedUser);
     alert("user updated successfully");
@@ -79,7 +80,7 @@ function EditDetails({ currentUser, onSave, setShowEditDetails }) {
         justifyContent: "center",
         backgroundColor: "gray",
         borderRadius: "20px",
-        margin: "10px"
+        margin: "10px",
       }}
     >
       <h1>Enter Your Details</h1>

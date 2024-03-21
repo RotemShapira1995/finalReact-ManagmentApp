@@ -18,7 +18,7 @@ function Register({ onBackToLogin, registerUserMain }) {
   });
 
   const [formErrors, setFormErrors] = useState({}); // State to track form errors
-  const [imageSrc, setImageSrc] = useState('');
+  const [imageSrc, setImageSrc] = useState("");
   const [imageFile, setImageFile] = useState(null);
 
   // Destructure state variables for easier access
@@ -271,9 +271,9 @@ function Register({ onBackToLogin, registerUserMain }) {
     const form = e.target;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
-    
+
     console.log(formJson);
-    registerUserMain({...formJson, imageSrc}); //dendthe newUser to Main component to finish registration - save to local
+    registerUserMain({ ...formJson, imageSrc }); //dendthe newUser to Main component to finish registration - save to local
   }
 
   //Get back to Main without registrating
@@ -283,7 +283,7 @@ function Register({ onBackToLogin, registerUserMain }) {
 
   const handleChange = (e) => {
     if (e.target.id === "image") {
-      handleFileInputChange(e)
+      handleFileInputChange(e);
       const newValues = { ...values, [e.target.id]: e.target.files[0].name };
       setValues(newValues);
 
@@ -291,17 +291,16 @@ function Register({ onBackToLogin, registerUserMain }) {
     } else {
       const newValues = { ...values, [e.target.name]: e.target.value };
       setValues(newValues);
-      console.log("username: " + username)
-      console.log("user in: " + e.target.name)
+      console.log("username: " + username);
+      console.log("user in: " + e.target.name);
       if (username !== "admin") {
-        console.log("send to validation")
+        console.log("send to validation");
         validators[e.target.name](e.target.value);
-      }
-      else {
-        setFormErrors({...formErrors, ["password"]: "" });
+      } else {
+        setFormErrors({ ...formErrors, ["password"]: "" });
 
         if (e.target.name !== "password") {
-          console.log("send to validation")
+          console.log("send to validation");
           validators[e.target.name](e.target.value);
         }
       }

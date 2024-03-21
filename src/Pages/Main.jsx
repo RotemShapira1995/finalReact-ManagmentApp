@@ -126,9 +126,13 @@ export function Main() {
       )}
       {!currentUser && !showLogIn && !showRegister && (
         <>
-          <button style={{margin: "5px"}} onClick={handleRegisterClick}>Register</button>
-     
-          <button style={{margin: "5px"}} onClick={handleLogInClick}>Log In</button>
+          <button style={{ margin: "5px" }} onClick={handleRegisterClick}>
+            Register
+          </button>
+
+          <button style={{ margin: "5px" }} onClick={handleLogInClick}>
+            Log In
+          </button>
         </>
       )}
       {showLogIn && !currentUser && (
@@ -155,8 +159,11 @@ export function Main() {
           />
         ) : (
           <>
-            <UserProfile currentUser={currentUser} handleEditDetailsClick={handleEditDetailsClick} />
-            
+            <UserProfile
+              currentUser={currentUser}
+              handleEditDetailsClick={handleEditDetailsClick}
+            />
+
             {showEditDetails && (
               <EditDetails
                 currentUser={currentUser}

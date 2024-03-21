@@ -4,7 +4,7 @@ import "./usersForAdmin.css";
 function SystemAdmin({ showEditDetails, setShowEditDetails, onSave }) {
   const [selectedUser, setSelectedUser] = useState(null);
   // Retrieve admin profile from sessionStorage
-  const adminUsername = sessionStorage.getItem("username");
+
   const storedUserData = localStorage.getItem("users");
   const [usersList, setUsersList] = useState([]);
 
@@ -19,7 +19,7 @@ function SystemAdmin({ showEditDetails, setShowEditDetails, onSave }) {
         setUsersList(filteredUsers);
       }
     }
-  }, [adminUsername, storedUserData]);
+  }, [storedUserData]);
 
   const handleLogout = () => {
     // Reset the session
